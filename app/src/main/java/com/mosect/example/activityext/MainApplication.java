@@ -118,5 +118,11 @@ public class MainApplication extends Application {
                 Log.d(TAG, "onWindowFocusChanged:" + extInfo.getActivity().toString());
             }
         });
+/*        int myTag1 = ActivityExt.getInstance().registerTag();
+        int myTag2 = ActivityExt.getInstance().registerTag();*/
+
+/*        ExtInfo extInfo = ActivityExt.getInstance().getInfo(activity);
+        extInfo.setTag(myTag1, tagObj1);
+        Object tagObj2 = extInfo.getTag(myTag2);*/
     }
 }

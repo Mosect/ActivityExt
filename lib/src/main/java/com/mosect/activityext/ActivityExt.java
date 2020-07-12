@@ -63,6 +63,11 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
         return tagCount++;
     }
 
+    /**
+     * 初始化，需要在Application.onCreate中执行
+     *
+     * @param context 上下文
+     */
     public void init(Context context) {
         if (initialed) return;
         initialed = true;
@@ -105,6 +110,15 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
     }
 
     /**
+     * 获取栈顶的Activity拓展信息
+     *
+     * @return 拓展信息
+     */
+    public ExtInfo topInfo() {
+        return extInfoList.top();
+    }
+
+    /**
      * 在onCreate方法中，获取Activity拓展信息
      *
      * @param activity 上下文
@@ -143,7 +157,7 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
      * @param state 状态
      * @param task  任务
      * @param delay 是否可以延迟执行
-     * @return true，任务已经执行了；false，任务还未执行，等待执行
+     * @return {@link #RUN_NOW RUN_NOW} {@link #RUN_DELAY RUN_DELAY} {@link #RUN_CANCELED RUN_CANCELED}
      */
     public int run(ActivityState state, ActivityTask task, boolean delay) {
         if (null == task) {

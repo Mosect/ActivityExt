@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.mosect.activityext.ActivityExt;
+import com.mosect.activityext.ExtInfo;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // ExtInfo extInfo = ActivityExt.getInstance().getInfo(MainActivity.this);
+
+        int count = ActivityExt.getInstance().getInfoSize();
+        for (int i = 0; i < count; i++) {
+            ExtInfo extInfo = ActivityExt.getInstance().getInfo(i);
+        }
     }
 
     @Override

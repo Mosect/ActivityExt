@@ -2,6 +2,9 @@ package com.mosect.activityext;
 
 import android.app.Activity;
 
+/**
+ * Activity拓展信息
+ */
 public class ExtInfo {
 
     private Activity activity;
@@ -79,9 +82,5 @@ public class ExtInfo {
         if (null != callbackList) {
             callbackList.removeCallback(callback);
         }
-    }
-
-    ExtInfo findInfo(Activity activity) {
-        return null;
     }
 }

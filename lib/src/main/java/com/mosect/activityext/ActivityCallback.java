@@ -3,6 +3,9 @@ package com.mosect.activityext;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 
+/**
+ * Activity回调
+ */
 public interface ActivityCallback {
 
     void onCreated(ExtInfo extInfo);
