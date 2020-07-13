@@ -7,7 +7,7 @@ repositories {
 ```
 在需要使用的模块中，引用：
 ```
-implementation 'com.mosect:ActivityExt:1.0.0'
+implementation 'com.mosect:ActivityExt:1.0.1'
 ```
 # ActivityExt
 对Android Activity进行拓展，可以全局监听Activity生命周期、事件、为Activity添加tag对象等。
@@ -237,10 +237,6 @@ for (int i = 0; i < count; i++) {
 获取栈顶ExtInfo：
 ```
 ExtInfo extInfo = ActivityExt.getInstance().topInfo();
-```
-**注意：在Activity.onCreate方法中是获取不到ExtInfo的，需要使用ActivityExt.getInfoOnCreate方法**
-```
-ExtInfo extInfo = ActivityExt.getInstance().getInfoOnCreate(MainActivity.this);
 ```
 # 为Activity设置tag对象
 首先需要注册tag，在Application.onCreate中：

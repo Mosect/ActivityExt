@@ -6,8 +6,8 @@ publish {
     repoName = 'android'
     groupId = 'com.mosect'
     artifactId = 'ActivityExt'
-    publishVersion = '1.0.0'
-    desc = 'Android activity ext.'
+    publishVersion = '1.0.1'
+    desc = 'Delete ActivityExt.getInfoOnCreate method'
     website = 'https://github.com/Mosect/ActivityExt'
 }
 
