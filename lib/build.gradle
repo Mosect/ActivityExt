@@ -1,4 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'mosect'
+    repoName = 'android'
+    groupId = 'com.mosect'
+    artifactId = 'ActivityExt'
+    publishVersion = '1.0.0'
+    desc = 'Android activity ext.'
+    website = 'https://github.com/Mosect/ActivityExt'
+}
 
 android {
     compileSdkVersion 29

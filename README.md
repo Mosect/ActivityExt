@@ -1,3 +1,16 @@
+# 引用
+正在同步jcenter仓库，还没通过审核，先使用以下仓库：
+```
+repositories {
+    maven {
+            url 'https://dl.bintray.com/mosect/android'
+    }
+}
+```
+在需要使用的模块中，引用：
+```
+implementation 'com.mosect:ActivityExt:1.0.0'
+```
 # ActivityExt
 对Android Activity进行拓展，可以全局监听Activity生命周期、事件、为Activity添加tag对象等。
 ActivityExt为一个单例，提供了以下内容：
