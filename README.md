@@ -1,10 +1,8 @@
 # 引用
-正在同步jcenter仓库，还没通过审核，先使用以下仓库：
+已提交jcenter
 ```
 repositories {
-    maven {
-            url 'https://dl.bintray.com/mosect/android'
-    }
+    jcenter()
 }
 ```
 在需要使用的模块中，引用：
