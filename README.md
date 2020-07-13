@@ -238,6 +238,10 @@ for (int i = 0; i < count; i++) {
 ```
 ExtInfo extInfo = ActivityExt.getInstance().topInfo();
 ```
+**注意：在Activity.onCreate方法中是获取不到ExtInfo的，需要使用ActivityExt.getInfoOnCreate方法**
+```
+ExtInfo extInfo = ActivityExt.getInstance().getInfoOnCreate(MainActivity.this);
+```
 # 为Activity设置tag对象
 首先需要注册tag，在Application.onCreate中：
 ```
