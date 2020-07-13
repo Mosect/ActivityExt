@@ -47,7 +47,7 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
     private boolean initialed = false;
     private int tagCount;
     private ExtInfoList extInfoList;
-    private ExtInfoList extInfoListOnCreate;
+    //    private ExtInfoList extInfoListOnCreate;
     CallbackList callbackList;
     private LinkedList<ActivityTask>[] tasksList;
 
@@ -72,7 +72,7 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
         if (initialed) return;
         initialed = true;
         extInfoList = new ExtInfoList();
-        extInfoListOnCreate = new ExtInfoList();
+//        extInfoListOnCreate = new ExtInfoList();
         callbackList = new CallbackList();
         //noinspection unchecked
         tasksList = new LinkedList[ActivityState.values().length];
@@ -118,20 +118,20 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
         return extInfoList.top();
     }
 
-    /**
-     * 在onCreate方法中，获取Activity拓展信息
-     *
-     * @param activity 上下文
-     * @return 拓展信息
-     */
-    public ExtInfo getInfoOnCreate(Activity activity) {
-        ExtInfo extInfo = extInfoListOnCreate.find(activity);
-        if (null == extInfo) {
-            extInfo = new ExtInfo(activity, tagCount);
-            extInfoListOnCreate.add(extInfo);
-        }
-        return extInfo;
-    }
+//    /**
+//     * 在onCreate方法中，获取Activity拓展信息
+//     *
+//     * @param activity 上下文
+//     * @return 拓展信息
+//     */
+//    public ExtInfo getInfoOnCreate(Activity activity) {
+//        ExtInfo extInfo = extInfoListOnCreate.find(activity);
+//        if (null == extInfo) {
+//            extInfo = new ExtInfo(activity, tagCount);
+//            extInfoListOnCreate.add(extInfo);
+//        }
+//        return extInfo;
+//    }
 
     /**
      * 增加一个activity回调
@@ -187,13 +187,10 @@ public class ActivityExt implements Application.ActivityLifecycleCallbacks {
     }
 
     private ExtInfo createInfo(Activity activity) {
-        ExtInfo extInfo = extInfoListOnCreate.remove(activity);
-        if (null == extInfo) {
-            extInfo = new ExtInfo(activity, tagCount);
-            Window.Callback target = activity.getWindow().getCallback();
-            ExtWindowCallback extWindowCallback = new ExtWindowCallback(target, extInfo);
-            activity.getWindow().setCallback(extWindowCallback);
-        }
+        ExtInfo extInfo = new ExtInfo(activity, tagCount);
+        Window.Callback target = activity.getWindow().getCallback();
+        ExtWindowCallback extWindowCallback = new ExtWindowCallback(target, extInfo);
+        activity.getWindow().setCallback(extWindowCallback);
         extInfoList.add(extInfo);
         return extInfo;
     }

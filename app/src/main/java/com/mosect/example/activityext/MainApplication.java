@@ -11,7 +11,7 @@ import com.mosect.activityext.ExtInfo;
 
 public class MainApplication extends Application {
 
-    private static final String TAG = "ActivityExt.Example.App";
+    private static final String TAG = "ActivityExt.App";
 
     @Override
     public void onCreate() {

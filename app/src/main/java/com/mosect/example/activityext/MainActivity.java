@@ -2,6 +2,7 @@ package com.mosect.example.activityext;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.mosect.activityext.ActivityExt;
@@ -12,11 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "ActivityExt.MainAct";
+
     private int index;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        Log.d(TAG, "before super onCreate");
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "after super onCreate");
         setContentView(R.layout.activity_main);
         index = getIntent().getIntExtra("index", 0);
         findViewById(R.id.btn_new).setOnClickListener(new View.OnClickListener() {
